@@ -7,7 +7,7 @@ class DreamsController < ApplicationController
   end
 
   def new
-    @drem = Dream.new
+    @dream = Dream.new
   end
 
   def create
