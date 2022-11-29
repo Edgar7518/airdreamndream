@@ -13,7 +13,7 @@ class DreamsController < ApplicationController
   def create
     @dream = Dream.new(dream_params)
     if @dream.save
-      redirect_to dreams_path
+      redirect_to dream_path
     else
       render :new, status: :unprocessable_entity
     end
