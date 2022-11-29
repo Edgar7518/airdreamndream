@@ -4,7 +4,7 @@ class DreamsController < ApplicationController
   end
 
   def show
-    @dream = Dream.find(params[:id])    
+    @dream = Dream.find(params[:id])
   end
 
   def new
@@ -13,8 +13,9 @@ class DreamsController < ApplicationController
 
   def create
     @dream = Dream.new(dream_params)
+    @dream.user = current_user
     if @dream.save
-      redirect_to dream_path
+      redirect_to dream_path(@dream)
     else
       render :new, status: :unprocessable_entity
     end
@@ -23,6 +24,6 @@ class DreamsController < ApplicationController
   private
 
   def dream_params
-    params.require(:dream).permit(:name, :description, :price, :duration)
+    params.require(:dream).permit(:name, :description, :price, :duration, :category_id)
   end
 end
