@@ -3,9 +3,12 @@
 <div id="locations">
   <% @locations.each do |location| %>
     <%= render location %>
-   
+
   <% end %>
 </div>
 
 <%= link_to 'Home', root_path %>
 
+
+
+<%= @user.locations_as_owner %>
