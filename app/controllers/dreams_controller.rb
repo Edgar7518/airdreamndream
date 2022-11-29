@@ -12,6 +12,16 @@ class DreamsController < ApplicationController
 
   def create
     @dream = Dream.new(dream_params)
-    @dream.save
+    if @dream.save
+      redirect_to dreams_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def dream_params
+    params.require(:dream).permit(:name, :description, :price, :duration)
   end
 end
