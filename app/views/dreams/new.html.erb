@@ -10,7 +10,9 @@
            <%= f.input :description, placeholder: 'Describe your Dream' %>
            <%= f.input :price, placeholder: 'The cost for your Dream' %>
            <%= f.input :duration, placeholder: 'Duration of your dream' %>
+          <%=f.association :category%>
           <input class="btn btn-primary" type="submit" value="Submit">
+          <%= link_to 'Back', dreams_path %>
         <% end %>
       </div>
     </div>
