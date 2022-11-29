@@ -1,1 +1,11 @@
-<h1>test index</h1>
+<h1>Dreams to rent</h1>
+
+<div id="locations">
+  <% @locations.each do |location| %>
+    <%= render location %>
+   
+  <% end %>
+</div>
+
+<%= link_to 'Home', root_path %>
+

@@ -80,3 +80,10 @@ print "creating travel dreams..."
 end
 puts "done!"
 puts "All done!"
+
+Location.create(
+dream: Dream.find(1), 
+user: User.find_by(email: "concorde@gmail.com"),
+comment: "test",
+status: 0
+)
