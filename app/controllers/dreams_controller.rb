@@ -4,6 +4,7 @@ class DreamsController < ApplicationController
   end
 
   def show
+    @dream = Dream.new    
   end
 
   def new
