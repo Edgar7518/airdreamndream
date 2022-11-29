@@ -4,7 +4,8 @@ class DreamsController < ApplicationController
   end
 
   def show
-    @dream = Dream.new    
+    @dream = Dream.new
+    @dream = Dream.find(params[:id])    
   end
 
   def new

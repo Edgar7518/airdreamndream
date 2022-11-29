@@ -1,10 +1,12 @@
 <h1>test show</h1>
 
-<h2><%= @dream.category %> Dream's category</h2>
-<h2><%= @dream.name %> Dream's name</h2>
-<h2><%= @dream.description %> Dream's description</h2>
-<h2><%= @dream.price %> Dream's price</h2>
-<h2><%= @dream.duration %> Dream's duration</h2>
+
+<h2><%= @dream.name %></h2>
+<h2><%= @dream.category.name %></h2>
+<h2><%= @dream.description %></h2>
+<h2><%= @dream.price %>CAD</h2>
+<h2><%= @dream.duration %>hours</h2>
+<h2><%= @dream.user.email %></h2>
 
 
 
