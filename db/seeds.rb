@@ -5,6 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
+
+# file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+# dream = Dream.new(name: "NES", body: "A great console")
+# dream.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# dream.save
 print "Cleaning..."
 
 Dream.destroy_all
@@ -82,7 +88,7 @@ puts "done!"
 puts "All done!"
 
 Location.create(
-dream: Dream.find(1), 
+dream: Dream.find(1),
 user: User.find_by(email: "concorde@gmail.com"),
 comment: "test",
 status: 0
