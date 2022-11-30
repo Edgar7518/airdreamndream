@@ -2,6 +2,7 @@
 
 <h1>Dreams</h1>
 
+<%= link_to "New dream", new_dream_path %>
 <div id="dreams">
   <% @dreams.each do |dream| %>
     <%= render dream %>
@@ -10,5 +11,3 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New dream", new_dream_path %>
