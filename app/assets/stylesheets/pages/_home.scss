@@ -1,1 +1,28 @@
 // Specific CSS for your home-page
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding-top: 10px;
+
+}
+
+.card{
+  background-color: rgb(245, 247, 247);
+  border-radius: 5px;
+  box-shadow: 1px 0px 2px 1px lightgrey;
+}
+
+.container{
+  padding: 20px
+}
+
+.card-image{
+  height: 250px;
+  object-fit: cover;
+}
+
+.text{
+  margin: 10px;
+
+}
