@@ -1,7 +1,7 @@
 <h1>Dreams to rent</h1>
 
 <div id="locations">
-  <% @locations.each do |location| %>
+  <% @user.locations.each do |location| %>
     <%= render location %>
 
   <% end %>
@@ -10,5 +10,16 @@
 <%= link_to 'Home', root_path %>
 
 
+<div id="rental">
 
-<%= @user.locations_as_owner %>
+  <% @user.locations_as_owner.each do |rent| %>
+    <%= render rent %>
+      <% if rent.user != @user %>
+      <%= link_to 'Update', root_path%>
+        <%# <%= simple_form_for(@locations) do |f| %>
+        <%# <%= f.input :status, collection: @statuses, include_blank: false %>
+        <%# <%= f.submit %>
+        <%# <% end %>
+       <% end %>
+  <% end %>
+</div>
