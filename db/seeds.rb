@@ -13,7 +13,7 @@ require "open-uri"
 # dream.save
 print "Cleaning..."
 
-# Location.destroy_all
+Location.destroy_all
 Dream.destroy_all
 Category.destroy_all
 User.destroy_all
