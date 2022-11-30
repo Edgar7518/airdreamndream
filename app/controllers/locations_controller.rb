@@ -18,7 +18,6 @@ class LocationsController < ApplicationController
     if @location.save
       redirect_to locations_path
     else
-      raise
       render :new, status: :unprocessable_entity
     end
   end

@@ -6,4 +6,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  validates :first_name, presence: { scope: :last_name }       
+  validates :first_name, uniqueness: { scope: :last_name }
 end
