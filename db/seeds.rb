@@ -70,7 +70,7 @@ puts "done!"
 print "creating travel dreams..."
 5.times do
   Dream.create!(
-    name: Faker::TvShows::RuPaul.quote,
+    name: Faker::TvShows::FamilyGuy.quote,
     description: Faker::Lorem.paragraph_by_chars,
     price: Faker::Number.decimal(l_digits: 3, r_digits: 3),
     duration: Faker::Number.number(digits: 3),
@@ -82,7 +82,7 @@ puts "done!"
 puts "All done!"
 
 Location.create(
-dream: Dream.find(1), 
+dream: Dream.find(1),
 user: User.find_by(email: "concorde@gmail.com"),
 comment: "test",
 status: 0

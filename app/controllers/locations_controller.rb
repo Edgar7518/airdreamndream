@@ -30,6 +30,10 @@ class LocationsController < ApplicationController
     end
   end
 
+  def owner_reservation
+    @statuses = { 'Confirm' => 'Confirmed', 'Decline' => 'Declined' }
+  end
+
   private
 
   def location_params
