@@ -1,13 +1,14 @@
-<h1>test show</h1>
-
-<%= cl_image_tag @dream.photo.key, height: 300, width: 400, crop: :fill %>
-<h2><%= @dream.name %></h2>
-<h2><%= @dream.category.name %></h2>
-<h2><%= @dream.description %></h2>
-<h2><%= @dream.price %>CAD</h2>
-<h2><%= @dream.duration %>hours</h2>
-<h2><%= @dream.user.email %></h2>
-
+<br>
+<h1>Détails</h1>
+<div class="container">
+  <%= cl_image_tag @dream.photo.key, height: 300, width: 400, crop: :fill %>
+  <h2><%= @dream.name %></h2>
+  <h2><%= @dream.category.name %></h2>
+  <h2><%= @dream.description %></h2>
+  <h2><%= @dream.price %>CAD</h2>
+  <h2><%= @dream.duration %>hours</h2>
+  <h2><%= @dream.user.email %></h2>
+</div>
 
 
 <%= link_to 'I want this dream', new_dream_location_path(@dream)%>
