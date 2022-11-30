@@ -24,6 +24,6 @@ class DreamsController < ApplicationController
   private
 
   def dream_params
-    params.require(:dream).permit(:name, :description, :price, :duration, :category_id)
+    params.require(:dream).permit(:name, :description, :price, :duration, :category_id, :photo)
   end
 end
