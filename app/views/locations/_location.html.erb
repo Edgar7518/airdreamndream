@@ -1,16 +1,21 @@
+  <%= cl_image_tag(location.dream.photo.key) %>
+  <div class="card-product-infos">
+    <p>
+      <strong>Titre</strong>
+      <%= location.dream.name %>
+    </p>
+    <p>
+      <strong>Commentaire:</strong>
+      <%= location.comment %>
+    </p>
+    <p>
+      <strong>Vendeur</strong>
+      <%= location.user.email %>
+    </p>
+    <p>
+      <h2><strong>Status :</strong>
+      <%= location.status %></h2>
+    </p>
+  </div>
 <div id="<%= dom_id location %>">
-
-  <p>
-    <strong>Comment:</strong>
-    <%= location.comment %>
-  </p>
-  <p>
-    <strong>User:</strong>
-    <%= location.user.email %>
-  </p>
-  <p>
-    <strong>Status:</strong>
-    <%= location.status %>
-  </p>
-
 </div>
