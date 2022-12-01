@@ -1,14 +1,16 @@
-<div id="<%= dom_id rents %>">
-  <p>
-    <strong>Comment:</strong>
-    <%= rent.comment %>
-  </p>
-  <p>
-    <strong>User:</strong>
-    <%= rent.user.email %>
-  </p>
-  <p>
-    <strong>Status:</strong>
-    <%= rent.status %>
-  </p>
+
+  <%= cl_image_tag(location.dream.photo.key) %>
+  <div class="card-product-infos">
+    <p>
+      <strong>Comment:</strong>
+      <%= rent.comment %>
+    </p>
+    <p>
+      <strong>User:</strong>
+      <%= rent.user.email %>
+    </p>
+    <p>
+      <strong>Status:</strong>
+      <%= rent.status %>
+    </p>
 </div>

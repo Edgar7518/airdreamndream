@@ -17,7 +17,7 @@ User.destroy_all
 puts "done !"
 
 print "creating category..."
-categories = %w[horror romantic coding travel eating sport concerts retirement time gladiator movie erotic]
+categories = %w[Horreur Romance Technologies Voyage Nourriture Sport Célébrité Temps Cinéma]
 categories.each do |category|
   Category.create!(name: category)
 end
@@ -34,14 +34,14 @@ users.each do |user|
 end
 
 puts "done!"
-print "creating horror dreams..."
+print "creating Horreur dreams..."
 all_dreams = [
   Dream.create!(
     name: "Perdu dans les bois",
     description: "Tu es perdu dans les bois, seul(e) et tu rencontre le grand méchant loup qui veut te manger. Heureusement tu es sauvé par une famille de cochons",
     price: 50,
     duration: 45,
-    category: Category.find_by(name: "horror"),
+    category: Category.find_by(name: "Horreur"),
     user: User.find_by(email: "yuhecny@gmail.com")
   ),
 
@@ -51,17 +51,17 @@ all_dreams = [
     description: "Je me réveille avec une drôle sensation dans la bouche, toutes mes dents ont disparues !",
     price: 500,
     duration: 2,
-    category: Category.find_by(name: "horror"),
+    category: Category.find_by(name: "Horreur"),
     user: User.find_by(email: "yuhecny@gmail.com")
   ),
 
 
   Dream.create!(
-    name: "Coder une application en une journée",
+    name: "Une journée de code",
     description: "De viens un super développeur en codant une applicattion complète en seulement une journée",
     price: 1000,
     duration: 2,
-    category: Category.find_by(name: "coding"),
+    category: Category.find_by(name: "Technologies"),
     user: User.find_by(email: "estelle@gmail.com")
   ),
 
@@ -70,7 +70,7 @@ all_dreams = [
     description: "tu es le meilleur développeur web",
     price: 45,
     duration: 2,
-    category: Category.find_by(name: "coding"),
+    category: Category.find_by(name: "Technologies"),
     user: User.find_by(email: "estelle@gmail.com")
   ),
 
@@ -79,7 +79,7 @@ all_dreams = [
     description: "Participe à cinq dates en une journée avec cinq personnes différentes",
     price: 150,
     duration: 5,
-    category: Category.find_by(name: "romantic"),
+    category: Category.find_by(name: "Romance"),
     user: User.find_by(email: "edgar@gmail.com")
   ),
 
@@ -89,7 +89,7 @@ all_dreams = [
     description: "Coup de foudre avec le plus beau des chats, tu décides de te marier avec lui tout de suite",
     price: 100,
     duration: 2,
-    category: Category.find_by(name: "romantic"),
+    category: Category.find_by(name: "Romance"),
     user: User.find_by(email: "edgar@gmail.com")
   ),
 
@@ -98,7 +98,7 @@ all_dreams = [
     description: "Un weekend sur les plages thaïlandaises en bonne compagnie",
     price: 500,
     duration: 4,
-    category: Category.find_by(name: "travel"),
+    category: Category.find_by(name: "Voyage"),
     user: User.find_by(email: "concorde@gmail.com")
   ),
 
@@ -107,7 +107,7 @@ all_dreams = [
     description: "Tu pars en voyage avec tes amis pour visiter tous les pays d'Europe",
     price: 40,
     duration: 4,
-    category: Category.find_by(name: "travel"),
+    category: Category.find_by(name: "Voyage"),
     user: User.find_by(email: "concorde@gmail.com")
   ),
 
@@ -116,7 +116,7 @@ all_dreams = [
     description: "Tu passes toute la journée à manger tes plats préférés jusqu'à épuisement ",
     price: 60,
     duration: 4,
-    category: Category.find_by(name: "eating"),
+    category: Category.find_by(name: "Nourriture"),
     user: User.find_by(email: "concorde@gmail.com")
   ),
 
@@ -125,7 +125,7 @@ all_dreams = [
     description: "Tu es fatigué de toujours manger la même chose ? Participe à un cours de cuisine avec un grand Chef",
     price: 35,
     duration: 3,
-    category: Category.find_by(name: "eating"),
+    category: Category.find_by(name: "Nourriture"),
     user: User.find_by(email: "concorde@gmail.com")
   ),
 
@@ -134,7 +134,7 @@ all_dreams = [
     description: "Tu remportes la Coupe Davis face aà Rafael Nadal, facile !",
     price: 250,
     duration: 3,
-    category: Category.find_by(name: "sport"),
+    category: Category.find_by(name: "Sport"),
     user: User.find_by(email: "yuhecny@gmail.com")
   ),
 
@@ -144,7 +144,7 @@ all_dreams = [
     description: "Tu pars au Qatar pour participer à la coupe du monde de soccer avec l'équipe du Luxembourg et remporte la coupe",
     price: 120,
     duration: 2,
-    category: Category.find_by(name: "sport"),
+    category: Category.find_by(name: "Sport"),
     user: User.find_by(email: "yuhecny@gmail.com")
   ),
 #////////////////
@@ -153,16 +153,16 @@ all_dreams = [
     description: "Décore ton sapin de noël en compagnie de Mariah Carey, tout en écoutant le titre All I want for christmas is you",
     price: 80,
     duration: 2,
-    category: Category.find_by(name: "concerts"),
+    category: Category.find_by(name: "Célébrité"),
     user: User.find_by(email: "edgar@gmail.com")
   ),
 
   Dream.create!(
-    name: "Une année avec Tom Cruis",
+    name: "Une année avec Tom Cruise",
     description: "Des vacances aux côtés de Tom, manger dans de bons restaurants et visiter le monde",
     price: 350,
     duration: 2,
-    category: Category.find_by(name: "retirement"),
+    category: Category.find_by(name: "Célébrité"),
     user: User.find_by(email: "concorde@gmail.com")
   ),
 
@@ -171,7 +171,7 @@ all_dreams = [
     description: "Tu peux revivre les meilleurs moments de ton enfance",
     price: 80,
     duration: 3,
-    category: Category.find_by(name: "time"),
+    category: Category.find_by(name: "Temps"),
     user: User.find_by(email: "edgar@gmail.com")
   ),
 
@@ -180,7 +180,7 @@ all_dreams = [
     description: "Lutte sans merci entre gladiateurs et tu remportes le combat avec honneur",
     price: 30,
     duration: 1,
-    category: Category.find_by(name: "gladiator"),
+    category: Category.find_by(name: "Cinéma"),
     user: User.find_by(email: "edgar@gmail.com")
   ),
 
@@ -189,7 +189,7 @@ all_dreams = [
     description: "Tu es l'acteur principal dans ton film préféré",
     price: 50,
     duration: 1,
-    category: Category.find_by(name: "movie"),
+    category: Category.find_by(name: "Cinéma"),
     user: User.find_by(email: "yuhecny@gmail.com")
   ),
 
@@ -199,7 +199,7 @@ all_dreams = [
     description: "Tu as un super pouvoir qui te permet de voler comme un oiseau",
     price: 90,
     duration: 2,
-    category: Category.find_by(name: "travel"),
+    category: Category.find_by(name: "Voyage"),
     user: User.find_by(email: "yuhecny@gmail.com")
   )
 ]
