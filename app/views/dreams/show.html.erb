@@ -3,16 +3,22 @@
 
 <h1>Détails</h1>
 
+<div class="card-product">
+ <%= cl_image_tag @dream.photo.key, height: 300, width: 400, crop: :fill%>
+  <div class="card-product-infos">
+    <h2><%= @dream.name %></h2>
+    <p><strong>Categorie</strong></p>
+    <p><%= @dream.category.name %></p>
+    <p><strong>Description</strong></p>
+    <p><%= @dream.description %></p>
+    <p><strong>Prix</strong></p>
+    <p><%= @dream.price %>CAD</p>
+    <p><strong>Durée</strong></p>
+    <p><%= @dream.duration %>min</p>
+  </div>
 
-  <%= cl_image_tag @dream.photo.key, height: 300, width: 400, crop: :fill%>
-
-  <h2><%= @dream.name %></h2>
-  <h2><%= @dream.category.name %></h2>
-  <h2><%= @dream.description %></h2>
-  <h2>$<%= @dream.price %></h2>
-  <h2><%= @dream.duration %>min</h2>
-  <h2><%= @dream.user.email %></h2>
-<%= link_to 'I want this dream', new_dream_location_path(@dream)%>
-<%= link_to 'Back', dreams_path %>
-<%= link_to 'Home', root_path %>
 </div>
+
+<%= link_to 'I want this dream', new_dream_location_path(@dream), class: "btn btn-primary"%>
+    <%= link_to 'Back', dreams_path, class: "btn btn-primary" %>
+    <%= link_to 'Home', root_path, class: "btn btn-primary" %>

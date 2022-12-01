@@ -17,10 +17,11 @@
   <% @user.locations_as_owner.each do |rent| %>
     <%= render rent %>
       <% rent.user != @user %>
-        <button onclick="myFunction()">Accepter</button>
-        <button onclick="refuser()">Rejeter</button>
+        <%=link_to "Accepter", location_path(rent, status:'confirmed'), data:{turbo_method: :patch}, :onclick=>'myFunction()'%>
+
+        <%=link_to "Refuser", location_path(rent, status:'declined'), data:{turbo_method: :patch}, :onclick=>'refuser()'%>
         <p id="accepte"></p>
-        <p id="rejete"></p>
+        <p id="rejette"></p>
           <script>
             function myFunction() {
             document.getElementById("accepte").innerHTML = "Vous avez acceptez la location";
@@ -30,15 +31,9 @@
 
           <script>
             function refuser() {
-            document.getElementById("rejete").innerHTML = "Vous avez rejetez la location";
+            document.getElementById("rejette").innerHTML = "Vous avez rejetez la location";
             alert ("Vous avez rejetez la location");
             }
           </script>
-      <%# <%= link_to 'Update', root_path%>
-        <%# <%= simple_form_for(@locations) do |f| %>
-        <%# <%= f.input :status, collection: @statuses, include_blank: false %>
-        <%# <%= f.submit %>
-        <%# <% end %>
-       <%# <% end %>
   <% end %>
 </div>
