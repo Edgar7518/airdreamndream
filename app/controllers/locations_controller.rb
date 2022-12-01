@@ -23,10 +23,11 @@ class LocationsController < ApplicationController
   end
 
   def update
-    if @location.update(location_params)
-      redirect_to @location, notice: "Your rental was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
+    @location = Location.find(params[:id])
+    if params[:status].present?
+      @location.update(status: params[:status])
+      @location.save
+      # redirect_to @location, notice: "Your rental was successfully updated."
     end
   end
 
