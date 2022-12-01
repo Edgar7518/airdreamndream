@@ -1,7 +1,7 @@
 <br>
 <h1>Détails</h1>
 <div class="container">
-  <%# <%= cl_image_tag @dream.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @dream.photo.key, height: 300, width: 400, crop: :fill%>
   <h2><%= @dream.name %></h2>
   <h2><%= @dream.category.name %></h2>
   <h2><%= @dream.description %></h2>
