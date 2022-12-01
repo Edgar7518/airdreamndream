@@ -1,3 +1,4 @@
+
 <h1>Dreams to rent</h1>
 
 <div id="locations">
@@ -14,12 +15,29 @@
 
   <% @user.locations_as_owner.each do |rent| %>
     <%= render rent %>
-      <% if rent.user != @user %>
-      <%= link_to 'Update', root_path%>
+      <% rent.user != @user %>
+        <button onclick="myFunction()">Accepter</button>
+        <button onclick="refuser()">Rejeter</button>
+        <p id="accepte"></p>
+        <p id="rejete"></p>
+          <script>
+            function myFunction() {
+            document.getElementById("accepte").innerHTML = "Vous avez acceptez la location";
+            alert("Vous avez acceptez la location");
+           }
+          </script>
+
+          <script>
+            function refuser() {
+            document.getElementById("rejete").innerHTML = "Vous avez rejetez la location";
+            alert ("Vous avez rejetez la location");
+            }
+          </script>
+      <%# <%= link_to 'Update', root_path%>
         <%# <%= simple_form_for(@locations) do |f| %>
         <%# <%= f.input :status, collection: @statuses, include_blank: false %>
         <%# <%= f.submit %>
         <%# <% end %>
-       <% end %>
+       <%# <% end %>
   <% end %>
 </div>

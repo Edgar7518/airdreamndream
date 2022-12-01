@@ -269,5 +269,4 @@ all_dreams[16].photo.attach(io: dream_image_16, filename: "", content_type: "ima
 dream_image_17 = URI.open("https://res.cloudinary.com/dvw6upciw/image/upload/v1669913734/voler_ovqote.jpg")
 all_dreams[17].photo.attach(io: dream_image_17, filename: "", content_type: "image/png")
 
-
 puts "All done!"
