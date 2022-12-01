@@ -1,39 +1,47 @@
 
-<h1>Dreams I want to rent</h1>
+<div class="container">
+<h1>Rêves que je veux louer</h1>
 
+  <div id="locations">
 
-<div id="locations">
-  <% @user.locations.each do |location| %>
-    <%= render location %>
+    <% @user.locations.each do |location| %>
+    <div class="card-product">
+      <%= render location %>
+    </div>
+    <% end %>
 
-  <% end %>
+  </div>
 </div>
+  <div class="container">
+  <h1>Mes rêves à louer</h1>
 
-<h1>My dreams for rent</h1>
 
+  <div id="rental">
 
-<div id="rental">
+    <% @user.locations_as_owner.each do |rent| %>
+    <div class="card-product">
+      <%= render rent %>
+    </div>
+        <% rent.user != @user %>
+          <%=link_to "Accepter", location_path(rent, status:'confirmed'), data:{turbo_method: :patch}, class:"btn btn-primary", :onclick=>'myFunction()'%>
 
-  <% @user.locations_as_owner.each do |rent| %>
-    <%= render rent %>
-      <% rent.user != @user %>
-        <%=link_to "Accepter", location_path(rent, status:'confirmed'), data:{turbo_method: :patch}, :onclick=>'myFunction()'%>
-
-        <%=link_to "Refuser", location_path(rent, status:'declined'), data:{turbo_method: :patch}, :onclick=>'refuser()'%>
-        <p id="accepte"></p>
-        <p id="rejette"></p>
-          <script>
-            function myFunction() {
-            document.getElementById("accepte").innerHTML = "Vous avez acceptez la location";
-            alert("Vous avez acceptez la location");
-           }
-          </script>
-
-          <script>
-            function refuser() {
-            document.getElementById("rejette").innerHTML = "Vous avez rejetez la location";
-            alert ("Vous avez rejetez la location");
+          <%=link_to "Refuser", location_path(rent, status:'declined'), data:{turbo_method: :patch}, class:"btn btn-primary", :onclick=>'refuser()'%>
+          <p id="accepte"></p>
+          <p id="rejette"></p>
+            <script>
+              function myFunction() {
+              document.getElementById("accepte").innerHTML = "Vous avez acceptez la location";
+              alert("Vous avez acceptez la location");
             }
-          </script>
-  <% end %>
+            </script>
+
+            <script>
+              function refuser() {
+              document.getElementById("rejette").innerHTML = "Vous avez rejetez la location";
+              alert ("Vous avez rejetez la location");
+              }
+            </script>
+    <% end %>
+
+  </div>
 </div>
