@@ -9,8 +9,8 @@
   <h2><%= @dream.name %></h2>
   <h2><%= @dream.category.name %></h2>
   <h2><%= @dream.description %></h2>
-  <h2><%= @dream.price %>CAD</h2>
-  <h2><%= @dream.duration %>hours</h2>
+  <h2>$<%= @dream.price %></h2>
+  <h2><%= @dream.duration %>min</h2>
   <h2><%= @dream.user.email %></h2>
 <%= link_to 'I want this dream', new_dream_location_path(@dream)%>
 <%= link_to 'Back', dreams_path %>
