@@ -27,7 +27,7 @@ class LocationsController < ApplicationController
     if params[:status].present?
       @location.update(status: params[:status])
       @location.save
-      # redirect_to @location, notice: "Your rental was successfully updated."
+      redirect_to locations_path, notice: "Your rental was successfully updated."
     end
   end
 

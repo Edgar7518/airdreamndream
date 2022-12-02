@@ -27,9 +27,8 @@
       <%= render rent %>
     </div>
         <% rent.user != @user %>
-          <%=link_to "Accepter", location_path(rent, status:'confirmed'), data:{turbo_method: :patch}, class:"btn btn-primary", :onclick=>'myFunction()'%>
-
-          <%=link_to "Refuser", location_path(rent, status:'declined'), data:{turbo_method: :patch}, class:"btn btn-primary", :onclick=>'refuser()'%>
+          <%=link_to "Accepter", location_path(rent, status:'Confirmé'), data:{turbo_method: :patch}, class:"btn btn-primary", :onclick=>'myFunction()'%>
+          <%=link_to "Refuser", location_path(rent, status:'Refusé'), data:{turbo_method: :patch}, class:"btn btn-primary", :onclick=>'refuser()'%>
           <p id="accepte"></p>
           <p id="rejette"></p>
             <script>

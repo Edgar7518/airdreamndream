@@ -3,9 +3,9 @@ class Location < ApplicationRecord
   belongs_to :user
 
   enum status: {
-    pending: 0,
-    confirmed: 1,
-    declined: 2
+    En_attente: 0,
+    Confirmé: 1,
+    Refusé: 2
 
   }
 
