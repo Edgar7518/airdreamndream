@@ -9,30 +9,27 @@
 <div class="container">
   <h1>Nos rêves les plus populaires </h1>
   <div class="row row-cols-1 row-cols-md-3 g-4">
-        <% dream = @dreams.find_by(id:136) %>
-        <% dreamTwo = @dreams.find_by(id:125) %>
-        <% dreamThree = @dreams.find_by(id:129) %>
     <div class="col">
       <div class="card rounded">
         <div class="card">
 
-         <%= dream.photo.attached? ? cl_image_tag(dream.photo.key, width: 350, height: 200, crop: :fill, class:"card-img-top")  : image_tag("https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80")%></div>
+         <%= @dream.photo.attached? ? cl_image_tag(@dream.photo.key, width: 350, height: 200, crop: :fill, class:"card-img-top")  : image_tag("https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80")%></div>
           <div class="text">
             <p>
               <strong>Catégorie:</strong>
-              <%= dream.category.name %>
+              <% @dream.category.name %>
             </p>
             <p>
               <strong>Titre:</strong>
-              <%= dream.name %>
+              <%= @dream.name %>
             </p>
             <p>
               <strong>Prix:</strong>
-              <%= dream.price%> $
+              <%= @dream.price%> $
             </p>
           </div>
 
-        <%= link_to "Détails", dream, class:"btn btn-primary" %>
+        <%= link_to "Détails", @dream, class:"btn btn-primary" %>
       </div>
     </div>
 
@@ -40,23 +37,23 @@
       <div class="card rounded">
         <div class="card">
 
-         <%= dreamTwo.photo.attached? ? cl_image_tag(dreamTwo.photo.key, width: 350, height: 200, crop: :fill, class:"card-img-top")  : image_tag("https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80")%></div>
+         <%= @dreamTwo.photo.attached? ? cl_image_tag(@dreamTwo.photo.key, width: 350, height: 200, crop: :fill, class:"card-img-top")  : image_tag("https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80")%></div>
           <div class="text">
             <p>
               <strong>Catégorie:</strong>
-              <%= dreamTwo.category.name %>
+              <%= @dreamTwo.category.name %>
             </p>
             <p>
               <strong>Titre:</strong>
-              <%= dreamTwo.name %>
+              <%= @dreamTwo.name %>
             </p>
             <p>
               <strong>Prix:</strong>
-              <%= dreamTwo.price%> $
+              <%= @dreamTwo.price%> $
             </p>
           </div>
 
-        <%= link_to "Détails", dreamTwo, class:"btn btn-primary" %>
+        <%= link_to "Détails", @dreamTwo, class:"btn btn-primary" %>
       </div>
     </div>
 
@@ -64,23 +61,23 @@
       <div class="card rounded">
         <div class="card">
 
-         <%= dreamThree.photo.attached? ? cl_image_tag(dreamThree.photo.key, width: 350, height: 200, crop: :fill, class:"card-img-top")  : image_tag("https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80")%></div>
+         <%= @dreamThree.photo.attached? ? cl_image_tag(@dreamThree.photo.key, width: 350, height: 200, crop: :fill, class:"card-img-top")  : image_tag("https://images.unsplash.com/photo-1536893827774-411e1dc7c902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80")%></div>
           <div class="text">
             <p>
               <strong>Catégorie:</strong>
-              <%= dreamThree.category.name %>
+              <%= @dreamThree.category.name %>
             </p>
             <p>
               <strong>Titre:</strong>
-              <%= dreamThree.name %>
+              <%= @dreamThree.name %>
             </p>
             <p>
               <strong>Prix:</strong>
-              <%= dreamThree.price%> $
+              <%= @dreamThree.price%> $
             </p>
           </div>
 
-        <%= link_to "Détails", dreamThree, class:"btn btn-primary" %>
+        <%= link_to "Détails", @dreamThree, class:"btn btn-primary" %>
       </div>
     </div>
   </div>
