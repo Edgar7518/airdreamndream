@@ -1,13 +1,12 @@
 
 <div class="min-vh-100">
-<h1>Rental this dream</h1>
 <div class="row comments ">
 <div class="col-12 col-md-6 offset-lg-3 mt-5">
   <div class = "bg-white rounded p-3 shadow">
-    <h1>Rental this dream</h1>
+    <h1>Louez ce rêve</h1>
       <%= simple_form_for ([@dream, @location]) do |f| %>
         <%= f.input :comment %>
-        <%= f.button :submit %>
+        <%= f.button :submit, value="Soumettre", class:"btn btn-primary" %>
       <% end %>
     </div>
   </div>
