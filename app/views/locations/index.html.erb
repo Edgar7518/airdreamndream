@@ -29,18 +29,14 @@
         <% rent.user != @user %>
           <%=link_to "Accepter", location_path(rent, status:'Confirmé'), data:{turbo_method: :patch}, class:"btn btn-primary", :onclick=>'myFunction()'%>
           <%=link_to "Refuser", location_path(rent, status:'Refusé'), data:{turbo_method: :patch}, class:"btn btn-primary", :onclick=>'refuser()'%>
-          <p id="accepte"></p>
-          <p id="rejette"></p>
             <script>
               function myFunction() {
-              document.getElementById("accepte").innerHTML = "Vous avez acceptez la location";
               alert("Vous avez acceptez la location");
             }
             </script>
 
             <script>
               function refuser() {
-              document.getElementById("rejette").innerHTML = "Vous avez rejetez la location";
               alert ("Vous avez rejetez la location");
               }
             </script>
